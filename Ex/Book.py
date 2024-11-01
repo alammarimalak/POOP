@@ -40,14 +40,3 @@ class Book:
             return 'you returned the book!', self.title
         else:
             return "you haven't returned the book", self.title
-
-bookk = Book(input("enter the title of the book: "), input("Enter the author of the book:"), input("availability: "))
-
-#information about the book
-print(bookk.display_book())
-
-#checking out the book
-print(bookk.checkout_book())
-
-#returning the book
-print(bookk.return_book())
