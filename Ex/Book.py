@@ -10,33 +10,44 @@
 
 class Book:
     #properties of a book 
-    def __init__(self, title, author, available):
+    def __init__(self, title, author):
         self.title = title 
         self.author = author  
         self.available = True 
 
     #methods of a book
-    def display_book(self):
+    def display_book(self):        
+        print(self.title, self.author, self.available)
         
-        if self.available:
-            availability = "Available"
-            return "the book you chose is available"
-        else:
-            availability = "Checked out"
-            return "you checked out the chosen book"
-        
-    def checkout_book(self):
-        
+    def checkout_book(self):        
         if self.available:
             availability = False
             return 'your book ', self.title ,'is checked out!'
         else: 
             return 'your book' , self.title ,'is available!'
         
-    def return_book(self):
-        
+    def return_book(self):        
         if not self.available:
             self.available = True
             return 'you returned the book!', self.title
         else:
             return "you haven't returned the book", self.title
+
+#2)create subclasses of book for different types of books
+class Novel(Book):
+    def __init__(self,title, author, genre):
+        super().__init__(title,author)
+        self.genre = genre
+
+    def displayBook(self):
+        return super().display_book() , self.genre
+    
+class Magazine(Book):
+    def __init__(self,title,author,issue):
+        super().__init__(title,author)
+        self.issue = issue
+
+    def displayBook(self):
+        return super().display_book(), self.issue
+    
+
