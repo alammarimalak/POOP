@@ -75,3 +75,25 @@ class Member:
     def displayCheckedBooks(self):
         for i in self.checkouts:
             print(i)
+
+#defining the library class:
+class Library:
+    def __init__(self):
+        self.books = []
+        self.members = []
+
+    def addBooks(self, book):
+        self.books.append(book)
+        print("a book has been added")
+
+    def registerMember(self, member):
+        self.members.append(member)
+        print("a member has been added !")
+
+    def displayAllBooks(self):
+        for b in self.books:
+            print(b)
+
+    def displayAllMembers(self):
+        for m in self.members:
+            print(m)
