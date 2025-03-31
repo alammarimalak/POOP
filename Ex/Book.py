@@ -50,4 +50,28 @@ class Magazine(Book):
     def displayBook(self):
         return super().display_book(), self.issue
     
+#3)defining the member class:
+class Member:
+    def __init__(self,name):
+        self.name = name
+        self.checkouts = []
 
+    def checkOut(self):
+        isCheckedOut = True
+        if isCheckedOut:
+            self.checkouts.append(self.title)
+            self.available = False
+        else:
+            print(self.title, "is not checked out !")
+
+    def returnCheckedBook(self):
+        isCheckedOut = False
+        if isCheckedOut:
+            self.checkouts.remove(self.title)
+            self.available = True
+        else:
+            print("the book is being checked out")
+
+    def displayCheckedBooks(self):
+        for i in self.checkouts:
+            print(i)
